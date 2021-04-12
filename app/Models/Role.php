@@ -10,4 +10,9 @@ class Role extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+   /* public function getRouteKey()
+    {
+        return 'name';
+    }*/
 }

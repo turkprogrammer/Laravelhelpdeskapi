@@ -9,8 +9,15 @@ class RolesController extends Controller
 {
     public function index()
     {
+        $role = Role::find(3)->update([
+            'name' => 'Editor',
+        ]);
 
-        return Role::whereNotNull('created_at')->where('id', '>', 3)->get();
+        //Role::find(2)->delete();
+
+        return Role::find(3);
+
+        //return Role::whereNotNull('created_at')->where('id', '>', 3)->get();
         //return response()->json(Role::get());
     }
 
@@ -27,5 +34,13 @@ class RolesController extends Controller
         ]);
 
         return response()->json(true);
+    }
+
+    public function show(Role $role){
+        /*$role = Role::find($roleId);
+        if (empty($role)){
+            return response([], 404);
+        }*/
+        return response()->json(['data' => $role]);
     }
 }
