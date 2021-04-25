@@ -15,7 +15,9 @@ class RolesController extends Controller
 
         //Role::find(2)->delete();
 
-        return Role::find(3);
+        //return Role::find(3);
+
+        return Role::all();
 
         //return Role::whereNotNull('created_at')->where('id', '>', 3)->get();
         //return response()->json(Role::get());
